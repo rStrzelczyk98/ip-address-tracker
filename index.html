@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"
+      integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI="
+      crossorigin=""
+    />
+    <link rel="stylesheet" href="CSS/style.css" />
+    <script
+      src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"
+      integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM="
+      crossorigin=""
+    ></script>
+    <script defer src="script.js"></script>
+    <title>Frontend Mentor | IP Address Tracker</title>
+  </head>
+  <body>
+    <header class="main-header">
+      <h1>IP Address Tracker</h1>
+      <div class="input-field">
+        <input
+          type="text"
+          name="input"
+          id="input"
+          placeholder="Search for any IP address or domain"
+        />
+        <button
+          onclick="getData()"
+          class="btn"
+          aria-label="Search button"
+        ></button>
+        <p id="input-error"></p>
+      </div>
+      <ul class="output-field hidden">
+        <li class="item">
+          <h2>IP Address</h2>
+          <p></p>
+        </li>
+        <li class="item">
+          <h2>Location</h2>
+          <p></p>
+        </li>
+        <li class="item">
+          <h2>Timezone UTC</h2>
+          <p></p>
+        </li>
+        <li class="item">
+          <h2>ISP</h2>
+          <p></p>
+        </li>
+      </ul>
+    </header>
+    <main id="map"></main>
+    <footer class="attribution">
+      <p>
+        Challenge by
+        <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+          >Frontend Mentor</a
+        >. Coded by
+        <a href="https://github.com/rStrzelczyk98" target="_blank"
+          >Robert Strzelczyk</a
+        >.
+      </p>
+    </footer>
+  </body>
+</html>
