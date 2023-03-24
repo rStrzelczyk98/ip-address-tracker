@@ -45,6 +45,7 @@ h1 {
   font-weight: 400;
   font-size: 1.125rem;
   padding: 1em;
+  padding-right: 0;
   outline: transparent;
   border: none;
   border-top-left-radius: 1rem;
@@ -52,6 +53,9 @@ h1 {
 }
 #input:is(:hover, :focus) {
   cursor: pointer;
+}
+#input::placeholder {
+  font-size: 0.8125rem;
 }
 .btn {
   background-color: var(--black);
@@ -110,6 +114,9 @@ h1 {
 }
 
 /* map */
+#map {
+  min-height: 20rem;
+}
 
 .leaflet-touch .leaflet-bar {
   display: none;
@@ -146,6 +153,11 @@ h1 {
   }
   .attribution {
     background-image: url(../images/pattern-bg-desktop.png);
+  }
+}
+@media screen and (min-width: 450px) {
+  #input::placeholder {
+    font-size: 1.125rem;
   }
 }
 @media screen and (min-width: 650px) {

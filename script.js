@@ -1,7 +1,6 @@
 "use strict";
 const input = document.getElementById("input");
 const map = L.map("map", {
-  center: [0, 0],
   zoom: 13,
 });
 L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
@@ -32,9 +31,9 @@ async function getData() {
   }
 }
 
-function displayData(data) {
-  const output = document.querySelectorAll(".item");
+async function displayData(data) {
   const wrapper = document.querySelector(".output-field");
+  const output = document.querySelectorAll(".item");
   output.forEach((el, i) => (el.children[1].textContent = data[i]));
   displayMap(data.at(-1));
   wrapper.classList.remove("hidden");
@@ -45,8 +44,14 @@ function displayMap(latlng) {
     iconUrl: "images/icon-location.svg",
     iconAnchor: [22, 65],
   });
-  map.setView(latlng, 13);
+  map.setView(latlng, 13, {
+    animate: true,
+    pan: {
+      duration: 0.25,
+    },
+  });
   L.marker(latlng, { icon: myIcon }).addTo(map);
+  return true;
 }
 
 function displayError(msg) {
